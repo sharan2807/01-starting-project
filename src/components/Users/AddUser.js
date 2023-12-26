@@ -4,8 +4,8 @@ import classes from "./AddUser.module.css";
 import Button from "../UI/Button";
 
 const AddUser = (props) => {
-  const [enteredUsername, setEnteredUsername] = useState("");
-  const [enteredAge, setEnteredAge] = useState("");
+  const [enteredUsername, setEnteredUsername] = useState('');
+  const [enteredAge, setEnteredAge] = useState('');
 
   const addUserHandler = (event) => {
     event.preventDefault();
@@ -16,7 +16,8 @@ const AddUser = (props) => {
     if(enteredAge<1){
       return;
     }
-    console.log(enteredUsername, enteredAge);
+    // console.log(enteredUsername, enteredAge);
+    props.onAddUser(enteredUsername, enteredAge);
     setEnteredUsername("");
     setEnteredAge("");
   };
